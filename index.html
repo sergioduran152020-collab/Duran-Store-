@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08a9ff">
+  <meta name="description" content="Duran Store - compra de diamantes">
+  <link rel="manifest" href="manifest.json">
+  <title>Duran Store</title>
+  <link rel="icon" href="assets/banner.jpg">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#050b16;color:#fff}
+    .wrap{max-width:760px;margin:auto;padding-bottom:32px}
+    header{padding:14px 14px 0}
+    .brand{font-size:28px;font-weight:900;letter-spacing:.5px;color:#22bfff;text-align:center;margin:8px 0 14px}
+    .banner{width:100%;display:block;border-radius:16px;border:2px solid #159fe5;box-shadow:0 0 22px #008cff55}
+    .title{text-align:center;font-size:24px;margin:22px 0 6px}
+    .sub{text-align:center;color:#a9bfd1;margin:0 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 14px}
+    .card{background:#091321;border:1px solid #168fce;border-radius:15px;padding:15px;box-shadow:0 0 12px #008cff22}
+    .diamonds{font-size:19px;font-weight:800}
+    .price{font-size:22px;font-weight:900;color:#18b9ff;margin:7px 0 12px}
+    button{width:100%;border:0;border-radius:10px;padding:12px 8px;background:#0ca8ee;color:#00101b;font-weight:900;font-size:15px}
+    button:active{transform:scale(.98)}
+    .info{margin:22px 14px 0;padding:16px;border-radius:15px;background:#07111e;border:1px solid #1a8dca;text-align:center}
+    .info h2{margin:0 0 8px;font-size:19px}
+    .info p{margin:6px 0;color:#c7d7e2}
+    footer{text-align:center;color:#71899b;font-size:13px;margin-top:22px}
+    @media(max-width:520px){.grid{grid-template-columns:1fr}.price{font-size:21px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand">DURAN STORE</div>
+      <img class="banner" src="assets/banner.jpg" alt="Duran Store">
+    </header>
+
+    <h1 class="title">💎 Elige tu paquete</h1>
+    <p class="sub">Compra fácil y rápida por WhatsApp</p>
+
+    <section class="grid">
+      <article class="card"><div class="diamonds">110 Diamantes</div><div class="price">$3.573 COP</div><button onclick="buy('110 Diamantes','$3.573 COP')">💎 Comprar</button></article>
+      <article class="card"><div class="diamonds">341 Diamantes</div><div class="price">$10.719 COP</div><button onclick="buy('341 Diamantes','$10.719 COP')">💎 Comprar</button></article>
+      <article class="card"><div class="diamonds">572 Diamantes</div><div class="price">$18.124 COP</div><button onclick="buy('572 Diamantes','$18.124 COP')">💎 Comprar</button></article>
+      <article class="card"><div class="diamonds">1166 Diamantes</div><div class="price">$33.659 COP</div><button onclick="buy('1166 Diamantes','$33.659 COP')">💎 Comprar</button></article>
+      <article class="card"><div class="diamonds">2398 Diamantes</div><div class="price">$66.802 COP</div><button onclick="buy('2398 Diamantes','$66.802 COP')">💎 Comprar</button></article>
+      <article class="card"><div class="diamonds">6160 Diamantes</div><div class="price">$170.008 COP</div><button onclick="buy('6160 Diamantes','$170.008 COP')">💎 Comprar</button></article>
+    </section>
+
+    <section class="info">
+      <h2>📲 ¿Cómo comprar?</h2>
+      <p>1. Elige tu paquete.</p>
+      <p>2. Pulsa Comprar.</p>
+      <p>3. Envíanos tu pedido por WhatsApp.</p>
+      <p>4. Coordina el pago y la entrega.</p>
+    </section>
+
+    <footer>Duran Store · Atención por WhatsApp</footer>
+  </main>
+
+  <script>
+    function buy(pack, price){
+      const phone = "573189019093";
+      const text = `Hola Duran Store 👋 Quiero comprar ${pack} por ${price}.`;
+      window.location.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    }
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+    }
+  </script>
+</body>
+</html>

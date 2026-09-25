@@ -1,0 +1,9 @@
+{
+  "name": "Duran Store",
+  "short_name": "Duran Store",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050b16",
+  "theme_color": "#08a9ff",
+  "description": "Duran Store - compra de diamantes"
+}
